@@ -34,7 +34,15 @@ class CheckRethinkDB < Sensu::Plugin::Check::CLI
 
   def run
     begin
-      conn = r.connect(host: config[:host], port: config[:port])
+      options = {
+          host: config[:host],
+          port: config[:port]
+      }
+      unless config[:authkey].nil?
+        options[:auth_key] = config[:authkey]
+      end
+
+      conn = r.connect(options)
       result = r.db('rethinkdb').table('server_status')[:process].run(conn)
       version = result.next['version']
       ok "Server version: #{version}"

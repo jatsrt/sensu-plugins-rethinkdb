@@ -63,7 +63,15 @@ class CheckRethinkDB < Sensu::Plugin::Check::CLI
 
   def run
     begin
-      conn = r.connect(host: config[:host], port: config[:port])
+      options = {
+          host: config[:host],
+          port: config[:port]
+      }
+      unless config[:authkey].nil?
+        options[:auth_key] = config[:authkey]
+      end
+
+      conn = r.connect(options)
       if config[:filter].nil?
         table_count = r.db(config[:database]).table(config[:table]).count.run(conn)
       else
