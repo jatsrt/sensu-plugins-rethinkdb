@@ -10,23 +10,11 @@
 ## Functionality
 
 ## Files
- * bin/check-rethinkdb-replication-status.rb
- * bin/metrics-rethinkdb-count.rb
+ * bin/check-rethinkdb-alive.rb
+ * bin/check-rethinkdb-table-count.rb
  * bin/metrics-rethinkdb.rb
  
 ## Usage
-
-**metrics-rethinkdb**
-```
-{
-    "rethinkdb":{
-        "hostname": "localhost",
-        "port": "",
-        "username": "sensu_user",
-        "password": "sensu_user_pass"
-    }
-}
-```
 
 ## Installation
 

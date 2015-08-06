@@ -43,7 +43,6 @@ class RethinkDBMetrics < Sensu::Plugin::Metric::CLI::Graphite
   def run
     begin
       conn = r.connect(:host => config[:host], :port => config[:port])
-
       results = r.db('rethinkdb').table('stats').run(conn)
     rescue RethinkDB::RqlDriverError => e
       puts e.message
