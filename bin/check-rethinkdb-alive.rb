@@ -35,8 +35,8 @@ class CheckRethinkDB < Sensu::Plugin::Check::CLI
   def run
     begin
       options = {
-          host: config[:host],
-          port: config[:port]
+        host: config[:host],
+        port: config[:port]
       }
       unless config[:authkey].nil?
         options[:auth_key] = config[:authkey]

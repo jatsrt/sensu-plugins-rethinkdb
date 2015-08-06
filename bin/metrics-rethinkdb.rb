@@ -43,8 +43,8 @@ class RethinkDBMetrics < Sensu::Plugin::Metric::CLI::Graphite
   def run
     begin
       options = {
-          host: config[:host],
-          port: config[:port]
+        host: config[:host],
+        port: config[:port]
       }
       unless config[:authkey].nil?
         options[:auth_key] = config[:authkey]
