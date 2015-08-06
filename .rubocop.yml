@@ -28,3 +28,9 @@ RegexpLiteral:
 
 Style/Documentation:
   Enabled: false
+
+RedundantBegin:
+  Enabled: false
+
+Next:
+  Enabled: false

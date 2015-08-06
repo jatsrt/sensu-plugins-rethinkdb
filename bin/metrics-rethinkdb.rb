@@ -27,7 +27,7 @@ class RethinkDBMetrics < Sensu::Plugin::Metric::CLI::Graphite
          description: 'RethinkDB Port',
          short: '-p PORT',
          long: '--port PORT',
-         default: 28015
+         default: 28_015
 
   option :authkey,
          description: 'RethinkDB Auth Key',
@@ -42,7 +42,7 @@ class RethinkDBMetrics < Sensu::Plugin::Metric::CLI::Graphite
 
   def run
     begin
-      conn = r.connect(:host => config[:host], :port => config[:port])
+      conn = r.connect(host: config[:host], port: config[:port])
       results = r.db('rethinkdb').table('stats').run(conn)
     rescue RethinkDB::RqlDriverError => e
       puts e.message
@@ -53,14 +53,14 @@ class RethinkDBMetrics < Sensu::Plugin::Metric::CLI::Graphite
       type = doc['id'][0]
 
       case type
-        when 'server'
-          key = "#{type}.#{doc['server']}"
-        when 'table'
-          key = "#{type}.#{doc['db']}.#{doc['table']}"
-        when 'table_server'
-          key = "#{type}.#{doc['server']}.#{doc['db']}.#{doc['table']}"
-        else
-          key = type
+      when 'server'
+        key = "#{type}.#{doc['server']}"
+      when 'table'
+        key = "#{type}.#{doc['db']}.#{doc['table']}"
+      when 'table_server'
+        key = "#{type}.#{doc['server']}.#{doc['db']}.#{doc['table']}"
+      else
+        key = type
       end
 
       doc['query_engine'].unnest.each do |metric, value|

@@ -27,7 +27,7 @@ class CheckRethinkDB < Sensu::Plugin::Check::CLI
          short: '-p PORT',
          long: '--port PORT',
          proc: proc(&:to_i),
-         default: 28015
+         default: 28_015
 
   option :authkey,
          description: 'RethinkDB Auth Key',
@@ -63,12 +63,12 @@ class CheckRethinkDB < Sensu::Plugin::Check::CLI
 
   def run
     begin
-      conn = r.connect(:host => config[:host], :port => config[:port])
+      conn = r.connect(host: config[:host], port: config[:port])
       if config[:filter].nil?
-        table_count = r.db(config[:database]).table(config[:table]).count().run(conn)
+        table_count = r.db(config[:database]).table(config[:table]).count.run(conn)
       else
         filter = JSON.parse(config[:filter])
-        table_count = r.db(config[:database]).table(config[:table]).filter(filter).count().run(conn)
+        table_count = r.db(config[:database]).table(config[:table]).filter(filter).count.run(conn)
       end
 
       msg = "total=#{table_count}"

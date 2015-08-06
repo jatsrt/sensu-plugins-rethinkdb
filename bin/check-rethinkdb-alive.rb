@@ -25,7 +25,7 @@ class CheckRethinkDB < Sensu::Plugin::Check::CLI
          description: 'RethinkDB Port',
          short: '-p PORT',
          long: '--port PORT',
-         default: 28015
+         default: 28_015
 
   option :authkey,
          description: 'RethinkDB Auth Key',
@@ -34,9 +34,9 @@ class CheckRethinkDB < Sensu::Plugin::Check::CLI
 
   def run
     begin
-      conn = r.connect(:host => config[:host], :port => config[:port])
+      conn = r.connect(host: config[:host], port: config[:port])
       result = r.db('rethinkdb').table('server_status')[:process].run(conn)
-      version = result.next()['version']
+      version = result.next['version']
       ok "Server version: #{version}"
     rescue RethinkDB::RqlDriverError => e
       critical "Error message: #{e.error}"
