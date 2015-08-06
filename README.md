@@ -5,7 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/prelist/sensu-plugins-rethinkdb/badges/gpa.svg)](https://codeclimate.com/github/prelist/sensu-plugins-rethinkdb)
 [![Test Coverage](https://codeclimate.com/github/prelist/sensu-plugins-rethinkdb/badges/coverage.svg)](https://codeclimate.com/github/prelist/sensu-plugins-rethinkdb)
 [![Dependency Status](https://gemnasium.com/prelist/sensu-plugins-rethinkdb.svg)](https://gemnasium.com/prelist/sensu-plugins-rethinkdb)
-[![Codeship Status for prelist/sensu-plugins-rethinkdb](https://codeship.com/projects/95336/status?branch=master)](https://codeship.com/projects/95336)
+[![Codeship Status for prelist/sensu-plugins-rethinkdb](https://codeship.com/projects/157d9ba0-1e8f-0133-c403-1ae4090f5ce6/status?branch=master)](https://codeship.com/projects/95336)
 
 ## Functionality
 
