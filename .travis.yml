@@ -1,19 +1,31 @@
 language: ruby
 cache:
-  - bundler
+- bundler
 install:
-  - bundle install
+- bundle install
 rvm:
-  - 1.9.3
-  - 2.0
-  - 2.1
-  - 2.2
+- 1.9.3
+- 2.0
+- 2.1
+- 2.2
 notifications:
   email:
     recipients:
-      - jake@prelist.co
+    - jake@prelist.co
     on_success: change
     on_failure: always
-
 script:
-  - 'bundle exec rake default'
+- bundle exec rake default
+deploy:
+  provider: rubygems
+  api_key:
+    secure: nsqt9x1NFES3TiJqoiHbvhDPlFWE76J9gWtjdbWCtMZkAVPYnd7nUwn7Fn0TdjPXFke1Q6fOvl1dOYAuJitqgBdTLyzK6K5rAOVn4x1zyZryQwIHLLMY8EXUmjzJ+zjvs4IraAcP1FCUfzESjjyK6iyJPMQlaExfo2wWQGbjg+btICn81mO79u0m63ekWz60yu1WVtvRXTjyX2TT9CUSXCdPgbL+uJInvgI3rAUyfHubmO7x/dqaT4QI4ICc1ahGhjcl6pHi1zx1+e6XEIW7VchSkii71O949KW7jYnOlx64ZUsikeOQ+PT9Ft1rdcvWKdLg4utSsyWnzND4NdIGMcSDSQTQHg5E5GLfysWGO8bcrg/uq0nBu2Ho4op0SzOUPKkrcu9gHVzRopvFYuSHgkX4obNCSESTBicoGAYrZhxC21L82uCQVKSiCuNPs8qHFRSJL4iKOCfo52pg0aUVMgGTzXz8S4s9Qf++uDYY1BuN2O23ANCYXo7DRqoXDWgj4mdi4RwCbutRiTTxdUuyOOZL3bCExtK0+D3fj46j3b8BZKX+uCDBT5ws/2ZkZlZz1CPVz69oYTmfumVYKDr4D1+1GRiOjLqS9seHR3kOI+34OyRHj9Wv7T41NSf8oe8Zn2UB5oHD/DxgXjVSbhVtrLkdmnkoMRx/oOpW20SQiM4=
+  gem: sensu-plugins-rethinkdb
+  on:
+    tags: true
+    all_branches: true
+    rvm: 1.9.3
+    rvm: 2.0
+    rvm: 2.1
+    rvm: 2.2
+    repo: sensu-plugins/sensu-plugins-rethinkdb
