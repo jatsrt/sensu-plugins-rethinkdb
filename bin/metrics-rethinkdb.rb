@@ -69,7 +69,7 @@ class RethinkDBMetrics < Sensu::Plugin::Metric::CLI::Graphite
               "#{type}.#{doc['server']}.#{doc['db']}.#{doc['table']}"
             else
               type
-      end
+            end
 
       doc['query_engine'].unnest.each do |metric, value|
         output [config[:scheme], key, 'query', metric].join('.'), value, timestamp
