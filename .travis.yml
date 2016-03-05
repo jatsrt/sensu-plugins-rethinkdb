@@ -16,13 +16,15 @@ notifications:
     on_failure: always
 script:
 - bundle exec rake default
+- gem build sensu-plugins-rethinkdb.gemspec
+- gem install sensu-plugins-rethinkdb-*.gem
 deploy:
   provider: rubygems
   api_key:
-    secure: nsqt9x1NFES3TiJqoiHbvhDPlFWE76J9gWtjdbWCtMZkAVPYnd7nUwn7Fn0TdjPXFke1Q6fOvl1dOYAuJitqgBdTLyzK6K5rAOVn4x1zyZryQwIHLLMY8EXUmjzJ+zjvs4IraAcP1FCUfzESjjyK6iyJPMQlaExfo2wWQGbjg+btICn81mO79u0m63ekWz60yu1WVtvRXTjyX2TT9CUSXCdPgbL+uJInvgI3rAUyfHubmO7x/dqaT4QI4ICc1ahGhjcl6pHi1zx1+e6XEIW7VchSkii71O949KW7jYnOlx64ZUsikeOQ+PT9Ft1rdcvWKdLg4utSsyWnzND4NdIGMcSDSQTQHg5E5GLfysWGO8bcrg/uq0nBu2Ho4op0SzOUPKkrcu9gHVzRopvFYuSHgkX4obNCSESTBicoGAYrZhxC21L82uCQVKSiCuNPs8qHFRSJL4iKOCfo52pg0aUVMgGTzXz8S4s9Qf++uDYY1BuN2O23ANCYXo7DRqoXDWgj4mdi4RwCbutRiTTxdUuyOOZL3bCExtK0+D3fj46j3b8BZKX+uCDBT5ws/2ZkZlZz1CPVz69oYTmfumVYKDr4D1+1GRiOjLqS9seHR3kOI+34OyRHj9Wv7T41NSf8oe8Zn2UB5oHD/DxgXjVSbhVtrLkdmnkoMRx/oOpW20SQiM4=
+    secure: WdciRmxKnZnluOSqmq2PQdpwkz7DzvbTlN2M3SvsEHxRHWKIIFd3eSpqB/FaIk5/PujGn+R8nvFeWaxFaGnWNThXEKXeO0v6BRtRwKSKvAil68GKMijhKG+FEQgyHueoHfm3bg6luBSmDJlRvUwre0pZXXIrvEB9+4+HpwL7JvpCcBaiU8WHGK+mKxWaEnpnIBBwc6B0k6HARb7sLWIAYlgKPylkIEqp9Do9wwpwmE/PmNbXLKWJwKWfIBFlVzKTF6wcj5OwwArniOa9P4MLCw8lk05+nI8VusAH8gnCwX2vhW9a+0St6Km2Om+G8/Bv04I+ZYjW4EpwrSdUgU3tzF017S5nzCV9WeY/Eow3AnvZAU3RBGHhgdvtF9IxnD/a7UNUFmIdz8UXkSNG8vxD/oe7LT3wOlGc4Yd6idH21M4003JCHArMnZJFYQ5brhD6qYuusesbZXnk8bCKvUZPdKDNb1oXFz5tozOZCvWwVLq1q8I0mYtQwKEsUlBbkSa+FZmBNukT/4dZiykatMXA/6dzwc5AHMaPUWf2GhuZyS6hg29UPY9hWStYNOS+L9GxlBwSpUOfhDScnB1mcovSIO3ZsWte0AIpf/VvK4ZaMGBJzx0CvlYC+j59Z78bAqXQpHcztHsy13sj6eIOEB0/Sc3LbnNok335XRCQmb4g4KA=
   gem: sensu-plugins-rethinkdb
   on:
-    tags: true
+    ags: true
     all_branches: true
     rvm: 1.9.3
     rvm: 2.0
