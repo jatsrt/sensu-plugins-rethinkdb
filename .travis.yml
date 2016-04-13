@@ -24,7 +24,7 @@ deploy:
     secure: WdciRmxKnZnluOSqmq2PQdpwkz7DzvbTlN2M3SvsEHxRHWKIIFd3eSpqB/FaIk5/PujGn+R8nvFeWaxFaGnWNThXEKXeO0v6BRtRwKSKvAil68GKMijhKG+FEQgyHueoHfm3bg6luBSmDJlRvUwre0pZXXIrvEB9+4+HpwL7JvpCcBaiU8WHGK+mKxWaEnpnIBBwc6B0k6HARb7sLWIAYlgKPylkIEqp9Do9wwpwmE/PmNbXLKWJwKWfIBFlVzKTF6wcj5OwwArniOa9P4MLCw8lk05+nI8VusAH8gnCwX2vhW9a+0St6Km2Om+G8/Bv04I+ZYjW4EpwrSdUgU3tzF017S5nzCV9WeY/Eow3AnvZAU3RBGHhgdvtF9IxnD/a7UNUFmIdz8UXkSNG8vxD/oe7LT3wOlGc4Yd6idH21M4003JCHArMnZJFYQ5brhD6qYuusesbZXnk8bCKvUZPdKDNb1oXFz5tozOZCvWwVLq1q8I0mYtQwKEsUlBbkSa+FZmBNukT/4dZiykatMXA/6dzwc5AHMaPUWf2GhuZyS6hg29UPY9hWStYNOS+L9GxlBwSpUOfhDScnB1mcovSIO3ZsWte0AIpf/VvK4ZaMGBJzx0CvlYC+j59Z78bAqXQpHcztHsy13sj6eIOEB0/Sc3LbnNok335XRCQmb4g4KA=
   gem: sensu-plugins-rethinkdb
   on:
-    ags: true
+    tags: true
     all_branches: true
     rvm: 1.9.3
     rvm: 2.0
